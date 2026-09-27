@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>RuleTrace</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="hero">
+            <p class="eyebrow">LEXHACK 2026</p>
+
+            <h1>RuleTrace</h1>
+
+            <p class="subtitle">
+                Compare rules. Trace conflicts. Verify what matters.
+            </p>
+        </header>
+
+
+        <section class="input-section">
+
+            <div class="rule-box">
+
+                <label for="rule-a">
+                    Rule A
+                </label>
+
+                <textarea
+                    id="rule-a"
+                    placeholder="Paste the first rule here..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="rule-box">
+
+                <label for="rule-b">
+                    Rule B
+                </label>
+
+                <textarea
+                    id="rule-b"
+                    placeholder="Paste the second rule here..."
+                ></textarea>
+
+            </div>
+
+        </section>
+
+
+        <button id="analyze-button">
+            Analyze Rules
+        </button>
+
+
+        <p
+            id="status"
+            class="status"
+        ></p>
+
+
+        <section
+            id="results"
+            class="results hidden"
+        >
+
+            <div class="result-header">
+
+                <span id="relation"></span>
+
+                <h2>Analysis</h2>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <h3>Summary</h3>
+
+                <p id="summary"></p>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <h3>Evidence</h3>
+
+                <div id="evidence"></div>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <h3>Possible Consequences</h3>
+
+                <div id="consequences"></div>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <h3>Questions to Verify</h3>
+
+                <div id="questions"></div>
+
+            </div>
+
+
+            <p class="disclaimer">
+                RuleTrace identifies potential rule relationships
+                and conflicts. It does not provide a final legal
+                determination.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="/static/app.js"></script>
+
+</body>
+
+</html>

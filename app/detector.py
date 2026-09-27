@@ -2,7 +2,7 @@ from typing import Literal
 
 from dotenv import load_dotenv
 from openai import OpenAI
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 load_dotenv()
@@ -23,8 +23,16 @@ class Conflict(BaseModel):
 
 
 class Consequence(BaseModel):
-    consequence: str
-    basis: Literal["Rule A", "Rule B"]
+    consequence: str = Field(
+        description=(
+            "A direct practical outcome caused by applying the rule. "
+            "Do not merely restate the rule."
+        )
+    )
+
+    basis: Literal["Rule A", "Rule B"] = Field(
+        description="The rule that directly supports this consequence."
+    )
 
 
 class RuleItem(BaseModel):
@@ -61,8 +69,35 @@ Important rules:
 4. Do not state that a rule is legal or illegal.
 5. Do not invent laws, policies, authorities, consequences, or facts.
 6. Every potential conflict must be supported by quotations from the provided rules.
-7. Only include consequences that are directly supported by the provided text.
-8. If necessary information is missing, add it to questions_to_verify.
+7. A consequence must be a direct practical outcome of applying a rule.
+
+8. Do not treat a paraphrase or restatement of a rule as a consequence.
+
+For example:
+
+Rule:
+"Assignments submitted after Wednesday will not be accepted."
+
+Valid consequence:
+"An assignment submitted on Thursday may be rejected."
+
+Invalid consequence:
+"Assignments after Wednesday will not be accepted."
+
+The invalid example merely repeats the rule.
+
+9. If no direct downstream consequence can be supported from the provided rules,
+return an empty consequences list.
+
+10. Never invent downstream effects such as grade loss, disqualification,
+disciplinary action, financial loss, or legal liability unless the provided
+rules explicitly support them.
+
+11. If a consequence depends on missing information, put that uncertainty in
+questions_to_verify instead of consequences.
+
+When two rules conflict, you may describe the immediate practical uncertainty
+created by applying both rules, but do not speculate beyond the provided text.
 
 Classify the relationship as one of:
 

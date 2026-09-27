@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: #f5f7fa;
+    color: #18202a;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 70px 0 100px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #64748b;
+}
+
+h1 {
+    font-size: 54px;
+    margin: 8px 0;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 18px;
+}
+
+.input-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.rule-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: 700;
+}
+
+textarea {
+    min-height: 210px;
+    resize: vertical;
+
+    padding: 18px;
+
+    border: 1px solid #d6dce5;
+    border-radius: 12px;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    background: white;
+}
+
+textarea:focus {
+    outline: 2px solid #18202a;
+    border-color: transparent;
+}
+
+button {
+    display: block;
+
+    margin: 28px auto 0;
+
+    padding: 14px 32px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: #18202a;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+.status {
+    text-align: center;
+    margin-top: 18px;
+    color: #64748b;
+}
+
+.results {
+    margin-top: 55px;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-header {
+    margin-bottom: 25px;
+}
+
+.result-header h2 {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+#relation {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    background: #e8edf3;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.result-card {
+    padding: 24px;
+
+    margin-bottom: 18px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+}
+
+.result-card h3 {
+    margin-top: 0;
+}
+
+.evidence-item,
+.list-item {
+    padding: 12px 0;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.evidence-item:last-child,
+.list-item:last-child {
+    border-bottom: 0;
+}
+
+.source {
+    font-weight: 700;
+}
+
+.quote {
+    margin-top: 5px;
+    color: #475569;
+}
+
+.disclaimer {
+    margin-top: 30px;
+
+    text-align: center;
+
+    font-size: 13px;
+    color: #64748b;
+}
+
+@media (max-width: 750px) {
+
+    .input-section {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+}
