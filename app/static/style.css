@@ -201,3 +201,38 @@ button:disabled {
         font-size: 42px;
     }
 }
+
+.relation-badge {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.relation-badge.consistent {
+    background: #e8f5ee;
+    color: #246b45;
+}
+
+.relation-badge.supplemental {
+    background: #e8f0fb;
+    color: #315f9c;
+}
+
+.relation-badge.exception {
+    background: #f4edff;
+    color: #6840a0;
+}
+
+.relation-badge.potential_conflict {
+    background: #fff0e8;
+    color: #9a431d;
+}
+
+.relation-badge.insufficient_information {
+    background: #eef0f3;
+    color: #505a66;
+}

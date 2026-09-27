@@ -16,6 +16,29 @@ const statusText =
 
 button.addEventListener("click", analyzeRules);
 
+document
+    .getElementById("example-conflict")
+    .addEventListener("click", () => {
+
+        ruleA.value =
+            "Students may submit assignments until Friday at 11:59 PM.";
+
+        ruleB.value =
+            "Assignments submitted after Wednesday will not be accepted.";
+    });
+
+
+document
+    .getElementById("example-exception")
+    .addEventListener("click", () => {
+
+        ruleA.value =
+            "Students must attend all classes.";
+
+        ruleB.value =
+            "Students with approved medical leave may be absent.";
+    });
+
 
 async function analyzeRules() {
 
@@ -97,9 +120,14 @@ function renderResults(data) {
     results.classList.remove("hidden");
 
 
-    document.getElementById("relation")
-        .textContent =
+    const relationBadge =
+        document.getElementById("relation");
+
+    relationBadge.textContent =
         data.relation.replaceAll("_", " ");
+
+    relationBadge.className =
+        `relation-badge ${data.relation}`;
 
 
     document.getElementById("summary")
