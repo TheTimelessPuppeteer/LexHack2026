@@ -240,8 +240,13 @@ function renderConsequences(consequences) {
         element.className =
             "list-item";
 
+        const basisText =
+            Array.isArray(item.basis)
+                ? item.basis.join(" + ")
+                : item.basis;
+
         element.textContent =
-        `${item.consequence} — ${item.basis.join(" + ")}`;
+            `${item.consequence} — ${basisText}`;
 
         container.appendChild(element);
     }
